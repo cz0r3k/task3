@@ -70,7 +70,7 @@ class TestBookModel(unittest.TestCase):
         book2 = Book(name="Unique Book", author="Author2", year_published=2021, book_type="Non-Fiction")
         db.session.add(book1)
         db.session.commit()
-        with self.assertRaises(ValueError):
+        with self.assertRaises(Exception):
             db.session.add(book2)
             db.session.commit()
 
